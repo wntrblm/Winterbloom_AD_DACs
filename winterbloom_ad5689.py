@@ -128,7 +128,7 @@ class AD5689:
         cs_io.value = True
 
         spi = spi_cls(sck, MOSI=mosi)
-        spi_device = SPIDevice(spi, cs_io, polarity=0, phase=1)
+        spi_device = SPIDevice(spi, cs_io, polarity=0, phase=1, baudrate=5000000)
 
         return cls(spi_device)
 
