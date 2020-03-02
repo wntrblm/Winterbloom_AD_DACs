@@ -1,10 +1,10 @@
-# Winterbloom AD5689
+# Winterbloom Analog Devices DAC drivers
 
-This is a [CircuitPython](https://circuitpython.org) driver for the Analog Devices AD5689(R) 16-bit DAC
+This is a [CircuitPython](https://circuitpython.org) driver for the Analog Devices AD5689(R) and AD5686(R) 16-bit DACs
 
 ## Installation
 
-Install this library by copying [winterbloom_ad5689.py](winterbloom_ad5689.py) to your device's `lib` folder.
+Install this library by copying [winterbloom_ad_dacs](winterbloom_ad_dacs) to your device's `lib` folder.
 
 ## Connecting your device to the AD5689
 
@@ -33,10 +33,10 @@ The AD5689 is connected over [SPI](https://learn.adafruit.com/circuitpython-basi
 
 ```python
 import board
-import winterbloom_ad5689
+from winterbloom_ad_dacs import ad5689
 
 # Using hardware SPI with D3 wired to CS.
-dac = winterbloom_ad5689.create_from_pins(
+dac = ad5689.create_from_pins(
     cs=board.D3)
 dac.reset()
 
