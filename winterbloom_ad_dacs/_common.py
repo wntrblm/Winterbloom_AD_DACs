@@ -118,8 +118,8 @@ class AD568x:
 
     def send_command(self, command, param1, param2):
         """Directly send a raw command to the DAC."""
-        with self.spi_device:
-            self.spi_device.spi.write(bytes([command, param1, param2]))
+        with self.spi_device as spi:
+            spi.write(bytes([command, param1, param2]))
 
     def soft_reset(self):
         """Soft reset the DAC."""
